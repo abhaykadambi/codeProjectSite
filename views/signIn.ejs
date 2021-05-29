@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/header'); %>
+    <title>Sign In Page</title>
+</head>
+<body>
+    <%- include('partials/navbar'); %>
+
+      <div class="container">
+        <div class="well well-lg">
+            <form class="well-form" action="/sign-in" method="post">
+                <div class="form-group maintxt">
+                  <label for="email">Email address:</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group maintxt">
+                  <label for="pwd">Password:</label>
+                  <input type="password" class="form-control" id="pwd" name="pwd" required>
+                </div>
+                <div class="checkbox maintxt">
+                  <label><input type="checkbox">Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-default" style="display: inline;">Submit</button> <p>don't have an account? <a href="/sign-up" style="color: rgb(225, 193, 255); display: inline;">Sign Up</a></p>
+                
+              </form>
+        </div>
+      </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+body{
+    background-color: rgb(75, 26, 121);   
+}
+
+.maintxt{
+    font-family: 'Roboto', sans-serif;
+}
+
+.well{
+    background-color: rgb(100, 62, 134);
+    border-color: rgb(75, 26, 121);
+}
+
+.well-form{
+    color: white;
+}
+
+.navRed{
+    background-color: rgb(75, 26, 121);
+    border-color: rgb(75, 26, 121);
+}
+
+.navbtn:hover{
+    background-color: rgb(100, 62, 134);
+    border-color: rgb(100, 62, 134);
+}
+
+.navbtn{
+    color:white;
+}
+
+.beanboy-active{
+    background-color:rgb(57, 1, 105);
+    border-color: rgb(255, 255, 255);
+}

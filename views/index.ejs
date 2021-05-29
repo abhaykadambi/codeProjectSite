@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/header'); %>
+    <title>Practice Website</title>
+</head>
+<body>
+    <%- include('partials/navbar'); %>
+    <% posts.forEach(function(post){ %>
+        <%- include('partials/postPanel', {post: post}); %>
+    <% }); %>
+      
+</body>
+</html>

@@ -1,0 +1,18 @@
+<nav class="navbar navbar-inverse navRed" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">CodeProjects</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="navbtn text-white beanboy-active"><a href="/">Home</a></li>
+        <li class="navbtn text-white"><a href="#">Explore</a></li>
+        <li class="navbtn text-white"><a href="#">My Projects</a></li>
+        <% if(!session.loggedin){ %>
+        <li class="navbtn text-white"><a href="/sign-in">Sign In</a></li>
+        <% }else{ %>
+        <li class="navbtn text-white"><a href="/profile">Profile</a></li>
+        <li class="navbtn text-white"><a href="/post">Post</a></li>
+        <% } %>
+      </ul>
+    </div>
+  </nav>
