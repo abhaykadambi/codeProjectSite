@@ -2,6 +2,7 @@ const express = require('express');
 var session = require("express-session");
 const mongoose = require('mongoose');
 const app = express();
+require('dotenv').config();
 const user = require('./models/user');
 const post = require('./models/post');
 const passport = require('passport'),LocalStrategy = require('passport-local').Strategy;
@@ -18,7 +19,10 @@ app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
 
 const port = 3000;
-mongoose.connect('mongodb://mongo:oCzYyfpbRqBswyFCoBWr@containers-us-west-7.railway.app:5968', {useNewUrlParser: true}).then((err)=>{
+
+require('dotenv').config();
+
+mongoose.connect(process.env.DB_URL, {useNewUrlParser: true}).then((err)=>{
     console.log(err);
 });
 
