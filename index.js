@@ -134,6 +134,6 @@ app.post('/post', (req, res)=>{
     res.redirect('/');
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+app.listen(() => {
+  console.log(`Example app listening at http://localhost:${process.env.PORT}`)
 })
