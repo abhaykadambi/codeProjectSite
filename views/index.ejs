@@ -5,6 +5,7 @@
     <title>Practice Website</title>
 </head>
 <body>
+
     <%- include('partials/navbar'); %>
     <% posts.forEach(function(post){ %>
         <%- include('partials/postPanel', {post: post}); %>
