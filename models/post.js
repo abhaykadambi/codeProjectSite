@@ -3,6 +3,7 @@ Schema = mongoose.Schema;
 const postSchema = new Schema({
     title: { type:String, default:null },
     author: { type: String, default: null },
+    authorUsername: { type:String, default:"" },
     postContent: { type: String, default: null },
     views: {type:Number, default:null},
     likes: { type: Number, default:0 },
