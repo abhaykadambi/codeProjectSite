@@ -27,6 +27,10 @@ mongoose.connect(process.env.DB_URL, {useNewUrlParser: true}).then((err)=>{
 });
 
 app.get('/', (req, res) => {
+    res.render('home', {'session':req.session});
+})
+
+app.get('/explore', (req, res) => {
     var q = {};
     post.find().limit(10).then((docs)=>{
         console.log("posts: ",docs);
