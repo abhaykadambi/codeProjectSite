@@ -38,6 +38,7 @@ app.get('/explore', (req, res) => {
     }).then(()=>{
         res.render('index', {'session':req.session, 'posts':q});
     })
+        
 })
 
 app.get('/sign-in', (req, res) =>{
@@ -131,11 +132,31 @@ app.post('/post', (req, res)=>{
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = today.getFullYear();
     today = mm + '/' + dd + '/' + yyyy;
-    var newPost = new post({title:req.body.title, author:req.session.id, postContent:req.body.content, views:0, likes:0, datePosted:today, langCon:req.body.tags, discription:req.body.discription});
+    var newPost = new post({title:req.body.title, author:req.session.userId, authorUsername:req.session.username, postContent:req.body.content, views:0, likes:0, datePosted:today, langCon:req.body.tags, discription:req.body.discription});
     newPost.save().then((err)=>{
         console.log("posted", err);
     })
     res.redirect('/');
+})
+
+app.get('/p/:postName', (req, res)=>{
+    var postToShow = {};
+    post.findById(req.params.postName, function(err, docs){
+        if(err){
+            console.log("err", err);
+        }
+        else{
+            console.log("docs", docs);
+            postToShow = docs;
+        }
+    }).then(()=>{
+        if(postToShow === null){
+            res.render('index', {'session':req.session});
+        } else {
+            console.log(postToShow)
+            res.render('viewOtherPost', {'post':postToShow, 'session':req.session});
+        }
+    })
 })
 
 app.listen(process.env.PORT, () => {

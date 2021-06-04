@@ -1,7 +1,7 @@
 <div class="container">
     <div class="panel panel-default">
-        <div class="panel-heading"><%= post.title %><div style="text-align: right; display: inline-flex; padding-left: 10px;">views: <%= post.views %> likes: <%= post.likes %></div></div>
+        <div class="panel-heading"><a href="/p/<%= post._id %>"><%= post.title %></a><div style="text-align: right; display: inline-flex; padding-left: 10px;">views: <%= post.views %> likes: <%= post.likes %></div></div>
         <div class="panel-body"><%= post.discription %></div>
-        <div class="panel-heading">by <%= post.authorUsername %> on <%= post.datePosted %></div>
+        <div class="panel-heading">by <a href="/u/<%= post.authorUsername %>"><%= post.authorUsername %></a> on <%= post.datePosted %></div>
     </div> 
   </div>
